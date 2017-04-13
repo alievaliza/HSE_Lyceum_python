@@ -1,18 +1,20 @@
 #-*- coding: utf-8 -*
 import robot
 r = robot.rmap()
-r.lm('task4-11')
+r.lm('task4-12')
 def task():
 	pass
 	#------- пишите код здесь -----
 r.sleep = 0
+r.dn()
 r.rt()
-for row in range(1,15):
-        for column in range(1,row):
+for column in range(1,14):
+        for row in range(1,column):
                 r.pt('red')
-                r.rt()
-        r.lt(row-1)
-        r.dn()
+                r.dn()
+        r.up(column-1)
+        r.rt()
+r.dn(column)        
 	#------- пишите код здесь -----
 r.start(task)
 
